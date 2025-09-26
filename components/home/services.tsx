@@ -26,7 +26,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-white pt-5 lg:pt-0 pb-10">
+    <div className="bg-white py-10 pb-10">
       <ContainerWrapper>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, i) => (

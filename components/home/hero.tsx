@@ -6,14 +6,14 @@ import ContainerWrapper from "../common/ContainerWrapper";
 export default function Hero() {
   return (
     <>
-      <main className="min-h-screen bg-white relative overflow-hidden">
+      <main className="relative overflow-hidden bg-white">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-10 left-[-100px] w-40 h-40 bg-[#9DFF99] opacity-75 rounded-full blur-3xl"></div>
         </div>
 
         <ContainerWrapper className="relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 items-center min-h-[80vh]">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left content */}
             <div className="space-y-16">
               <div className="space-y-4">
