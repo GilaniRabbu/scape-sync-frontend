@@ -3,6 +3,7 @@ import Hero from "@/components/home/hero";
 import ServiceManage from "@/components/home/service-manage";
 import Services from "@/components/home/services";
 import Testimonials from "@/components/home/testimonials";
+import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/Header";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <ServiceManage />
       <Testimonials />
       <FAQ />
+      <Footer />
     </>
   );
 }
