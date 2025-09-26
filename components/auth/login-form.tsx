@@ -10,6 +10,8 @@ import { Eye, EyeOff } from "lucide-react";
 import { useLoginUserMutation } from "@/redux/api/authApi";
 import { toast } from "sonner";
 import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
+import AutHeader from "../shared/auth-header";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -46,27 +48,13 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
-      <div className="p-6">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-green-600 rounded flex items-center justify-center">
-            <div className="w-5 h-5 bg-white rounded-sm flex items-center justify-center">
-              <div className="w-3 h-3 bg-green-600 rounded-sm transform rotate-45"></div>
-            </div>
-          </div>
-          <div>
-            <h1 className="text-xl font-bold text-gray-900">ScapeSync</h1>
-            <p className="text-xs text-gray-600 uppercase tracking-wide">
-              Landscaping Management Software
-            </p>
-          </div>
-        </div>
-      </div>
+      <AutHeader />
 
       {/* Main */}
-      <div className="flex-1 flex items-center justify-center px-6">
-        <div className="w-full max-w-md">
+      <div className="flex-1 flex items-center justify-center px-6 pt-6 pb-10">
+        <div className="w-full max-w-md space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">
               Welcome to ScapeSync
@@ -79,11 +67,9 @@ export default function LoginForm() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm text-gray-600 mb-1">
-                Email address
-              </label>
               <Input
                 type="email"
+                placeholder="Email address"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 className="w-full"
@@ -138,6 +124,32 @@ export default function LoginForm() {
               {isLoading ? "Logging in..." : "Login"}
             </Button>
           </form>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t border-border" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                OR
+              </span>
+            </div>
+          </div>
+          <Button variant="outline" className="w-full bg-transparent">
+            <FaGoogle className="size-4 mr-2" />
+            Continue with Google
+          </Button>
+
+          {/* Sign up link */}
+          <p className="text-center text-sm text-muted-foreground">
+            Don&rsquo;t have an account?{" "}
+            <Link
+              href={"/signup"}
+              className="text-green-500 hover:underline font-medium"
+            >
+              Getting Started
+            </Link>
+          </p>
         </div>
       </div>
     </div>
