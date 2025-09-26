@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft } from "lucide-react";
 
-export default function ResetPasswordPage() {
+export default function ForgotPassword() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header with Logo */}

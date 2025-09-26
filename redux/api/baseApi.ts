@@ -26,7 +26,6 @@ const baseQuery = fetchBaseQuery({
     }
     return headers;
   },
-  credentials: "include", // ensures cookies are sent with requests
 });
 
 const baseQueryWithRefreshToken: BaseQueryFn<
@@ -104,6 +103,6 @@ function cleanupAuthState(api: any) {
 export const baseApi = createApi({
   reducerPath: "api",
   baseQuery: baseQueryWithRefreshToken,
-  tagTypes: ["Auth", "User", "Meal", "Booking"],
+  tagTypes: ["Auth", "User"],
   endpoints: () => ({}),
 });

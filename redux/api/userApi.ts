@@ -9,12 +9,22 @@ const userApi = baseApi.injectEndpoints({
         url: "/register",
         method: "POST",
         body: data,
+        redirect: "follow",
       }),
       invalidatesTags: ["User"],
+    }),
+
+    getUserDetail: build.query({
+      query: () => ({
+        url: "/user-detail",
+        method: "GET",
+        redirect: "follow",
+      }),
+      providesTags: ["User"],
     }),
   }),
 });
 
-export const { useCreateUserMutation } = userApi;
+export const { useCreateUserMutation, useGetUserDetailQuery } = userApi;
 
 export default userApi;

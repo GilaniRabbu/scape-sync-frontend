@@ -8,10 +8,12 @@ const authApi = baseApi.injectEndpoints({
         url: "/login",
         method: "POST",
         body: data,
+        redirect: "follow",
       }),
       invalidatesTags: ["Auth"],
     }),
   }),
 });
+// forgot-password, reset-password, resend-otp, verify-otp
 
 export const { useLoginUserMutation } = authApi;

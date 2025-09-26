@@ -1,9 +1,9 @@
-import SignupForm from "@/components/auth/signup-form";
+import UserDetail from "@/components/auth/user-detail";
 
 const page = () => {
   return (
     <div>
-      <SignupForm />
+      <UserDetail />
     </div>
   );
 };
