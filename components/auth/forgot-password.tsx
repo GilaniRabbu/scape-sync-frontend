@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft } from "lucide-react";
 import AuthHeader from "../shared/auth-header";
@@ -41,12 +40,12 @@ export default function ForgotPassword() {
               placeholder="Email address"
               className="w-full"
             />
-            <Button
-              type="submit"
-              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+            <Link
+              href={"/reset-password"}
+              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-2 px-6 rounded-lg text-sm font-medium inline-flex items-center justify-center gap-2 whitespace-nowrap"
             >
               Reset Password
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

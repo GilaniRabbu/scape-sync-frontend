@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
@@ -68,12 +67,12 @@ export default function ResetPassword() {
                 {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
-            <Button
-              type="submit"
-              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+            <Link
+              href={"/verify-otp"}
+              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-2 px-6 rounded-lg text-sm font-medium inline-flex items-center justify-center gap-2 whitespace-nowrap"
             >
               Reset Password
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
