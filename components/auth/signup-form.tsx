@@ -81,9 +81,9 @@ export default function SignupForm() {
           </div>
 
           {/* Form */}
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Name Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 gap-6">
               <div>
                 <Input
                   type="text"
@@ -131,7 +131,7 @@ export default function SignupForm() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all text-gray-400 hover:text-gray-600"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -151,40 +151,34 @@ export default function SignupForm() {
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all text-gray-400 hover:text-gray-600"
               >
                 {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
 
             {/* Terms Checkbox */}
-            <div className="flex items-start gap-3 py-2">
+            <div className="flex items-center gap-3 py-2">
               <Checkbox
                 id="terms"
                 checked={formData.terms}
                 onCheckedChange={(checked) =>
                   handleInputChange("terms", checked as boolean)
                 }
-                className="mt-0.5 data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600"
+                className="data-[state=checked]:bg-[#49AE44] data-[state=checked]:border-[#49AE44]"
               />
               <label
                 htmlFor="terms"
-                className="text-sm text-gray-700 leading-relaxed"
+                className="text-sm text-gray-800 leading-relaxed"
               >
                 I agree to Tech Takes{" "}
-                <a
-                  href="#"
-                  className="text-green-600 underline hover:text-green-700"
-                >
+                <Link href="#" className="underline">
                   Terms of Service
-                </a>{" "}
+                </Link>{" "}
                 and{" "}
-                <a
-                  href="#"
-                  className="text-green-600 underline hover:text-green-700"
-                >
+                <Link href="#" className="underline">
                   Privacy Policy
-                </a>
+                </Link>
                 .
               </label>
             </div>
@@ -193,7 +187,7 @@ export default function SignupForm() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-3 rounded-lg font-medium"
             >
               {isLoading ? "Creating..." : "Create Account"}
             </Button>
@@ -201,25 +195,26 @@ export default function SignupForm() {
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
+              <span className="w-full border-t border-gray-300" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">
-                OR
-              </span>
+              <span className="px-2 bg-gray-50 text-gray-600">OR</span>
             </div>
           </div>
-          <Button variant="outline" className="w-full bg-transparent">
+
+          <Button
+            variant="outline"
+            className="w-full bg-transparent cursor-pointer"
+          >
             <FaGoogle className="size-4 mr-2" />
             Continue with Google
           </Button>
 
-          {/* Sign up link */}
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-gray-600">
             Already have an account?{" "}
             <Link
               href={"/login"}
-              className="text-green-500 hover:underline font-medium"
+              className="font-medium text-[#49AE44] transition-all hover:underline"
             >
               Login
             </Link>

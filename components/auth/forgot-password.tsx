@@ -13,12 +13,12 @@ export default function ForgotPassword() {
       <AutHeader />
 
       {/* Main Content */}
-      <div className="flex-1 flex items-center justify-center px-6">
+      <div className="flex-1 flex items-center justify-center p-6">
         <div className="w-full max-w-md">
           <div className="mb-8">
             <Link
               href={"/login"}
-              className="flex items-center gap-2 text-green-600 hover:text-green-700 text-sm font-medium"
+              className="text-sm font-medium flex items-center gap-2 text-[#49AE44]"
             >
               <ChevronLeft size={16} />
               Back
@@ -39,12 +39,11 @@ export default function ForgotPassword() {
             <Input
               type="email"
               placeholder="Email address"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-green-600 focus:ring-green-600 text-gray-900 placeholder-gray-500"
+              className="w-full"
             />
-
             <Button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-3 rounded-lg font-medium"
             >
               Reset Password
             </Button>

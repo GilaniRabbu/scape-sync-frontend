@@ -36,7 +36,7 @@ export default function LoginForm() {
 
       if (res?.status) {
         toast.success(res?.message || "Login successful!");
-        router.push("/user-detail");
+        router.push("/");
         setFormData({ email: "", password: "", remember_me: false });
         localStorage.setItem("accessToken", res?.data?.token);
       } else {
@@ -54,7 +54,7 @@ export default function LoginForm() {
 
       {/* Main */}
       <div className="flex-1 flex items-center justify-center px-6 pt-6 pb-10">
-        <div className="w-full max-w-md space-y-6">
+        <div className="w-full max-w-lg space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">
               Welcome to ScapeSync
@@ -65,7 +65,7 @@ export default function LoginForm() {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Input
                 type="email"
@@ -88,7 +88,7 @@ export default function LoginForm() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 transition-all text-gray-400 hover:text-gray-600"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -102,15 +102,15 @@ export default function LoginForm() {
                   onCheckedChange={(checked) =>
                     handleInputChange("remember_me", checked as boolean)
                   }
-                  className="data-[state=checked]:bg-green-600 data-[state=checked]:border-green-600"
+                  className="data-[state=checked]:bg-[#49AE44] data-[state=checked]:border-[#49AE44]"
                 />
-                <label htmlFor="remember" className="text-sm text-gray-700">
+                <label htmlFor="remember" className="text-sm text-gray-800">
                   Remember me
                 </label>
               </div>
               <Link
                 href="/forgot-password"
-                className="text-sm text-green-600 hover:text-green-700"
+                className="text-sm text-[#49AE44] transition-all hover:underline"
               >
                 Forgot password?
               </Link>
@@ -119,7 +119,7 @@ export default function LoginForm() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+              className="cursor-pointer w-full bg-[#49AE44] hover:bg-green-700 text-white py-3 rounded-lg font-medium"
             >
               {isLoading ? "Logging in..." : "Login"}
             </Button>
@@ -127,25 +127,26 @@ export default function LoginForm() {
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
+              <span className="w-full border-t border-gray-300" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">
-                OR
-              </span>
+              <span className="px-2 bg-gray-50 text-gray-600">OR</span>
             </div>
           </div>
-          <Button variant="outline" className="w-full bg-transparent">
+
+          <Button
+            variant="outline"
+            className="w-full bg-transparent cursor-pointer"
+          >
             <FaGoogle className="size-4 mr-2" />
             Continue with Google
           </Button>
 
-          {/* Sign up link */}
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-gray-600">
             Don&rsquo;t have an account?{" "}
             <Link
               href={"/signup"}
-              className="text-green-500 hover:underline font-medium"
+              className="font-medium text-[#49AE44] transition-all hover:underline"
             >
               Getting Started
             </Link>
