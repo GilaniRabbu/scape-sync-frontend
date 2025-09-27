@@ -54,12 +54,12 @@ export default function LoginForm() {
 
       {/* Main */}
       <div className="flex-1 flex items-center justify-center px-6 pt-6 pb-10">
-        <div className="w-full max-w-lg space-y-6">
+        <div className="w-full max-w-md space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-2">
               Welcome to ScapeSync
             </h2>
-            <p className="text-gray-600">
+            <p className="text-sm text-gray-600">
               Please share your login details so you can access the website.
             </p>
           </div>
