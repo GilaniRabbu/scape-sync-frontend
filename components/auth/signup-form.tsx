@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
-import AutHeader from "../shared/auth-header";
+import AuthHeader from "../shared/auth-header";
 
 export default function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -68,7 +68,7 @@ export default function SignupForm() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
-      <AutHeader />
+      <AuthHeader />
 
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-center px-6 pt-6 pb-10">

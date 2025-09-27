@@ -3,14 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft } from "lucide-react";
-import AutHeader from "../shared/auth-header";
+import AuthHeader from "../shared/auth-header";
 import Link from "next/link";
 
 export default function ForgotPassword() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header with Logo */}
-      <AutHeader />
+      <AuthHeader />
 
       {/* Main Content */}
       <div className="flex-1 flex items-center justify-center p-6">

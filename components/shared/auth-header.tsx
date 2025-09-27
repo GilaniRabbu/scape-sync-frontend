@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const AutHeader = () => {
+const AuthHeader = () => {
   return (
     <div className="p-6">
       <Image
@@ -15,4 +15,4 @@ const AutHeader = () => {
   );
 };
 
-export default AutHeader;
+export default AuthHeader;

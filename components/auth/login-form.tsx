@@ -11,7 +11,7 @@ import { useLoginUserMutation } from "@/redux/api/authApi";
 import { toast } from "sonner";
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
-import AutHeader from "../shared/auth-header";
+import AuthHeader from "../shared/auth-header";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -50,7 +50,7 @@ export default function LoginForm() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
-      <AutHeader />
+      <AuthHeader />
 
       {/* Main */}
       <div className="flex-1 flex items-center justify-center px-6 pt-6 pb-10">
